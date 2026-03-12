@@ -36,7 +36,8 @@ export default function GameEnd() {
       </p>
       <p>
         <Button onClick={onPlayAgainClick} className="mt-4">
-          <SkipBackIcon/>Play Again
+          <SkipBackIcon />
+          Play Again
         </Button>
       </p>
       <p>

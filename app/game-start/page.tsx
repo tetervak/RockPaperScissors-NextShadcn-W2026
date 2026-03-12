@@ -29,7 +29,6 @@ export default function GameStart() {
     <React.Fragment>
       <h1 className="text-4xl text-green-700">Game Start</h1>
       <RadioGroup
-        defaultValue={Choice.PAPER}
         value={gameData.userChoice}
         onValueChange={onUserChoiceChange}
         className="w-fit"

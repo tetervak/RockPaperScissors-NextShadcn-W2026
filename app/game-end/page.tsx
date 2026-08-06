@@ -5,7 +5,7 @@ import { useGame } from "@/context/GameContext"
 import { useRouter } from "next/navigation"
 import { HomeIcon, SkipBackIcon } from "lucide-react"
 
-export default function GameEnd() {
+export default function GameEndPage() {
   const router = useRouter()
   const { gameData, resetGame } = useGame()
   const onPlayAgainClick = () => {

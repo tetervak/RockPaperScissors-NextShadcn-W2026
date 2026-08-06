@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation"
 import { useGame } from "@/context/GameContext"
 import { HomeIcon, PlayIcon } from "lucide-react"
 
-export default function GameStart() {
+export default function GameStartPage() {
   const router = useRouter()
   const { gameData, updateUserChoice, updateComputerChoice, updateGameResult } =
     useGame()

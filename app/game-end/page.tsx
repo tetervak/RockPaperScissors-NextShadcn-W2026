@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { useGame } from "@/context/GameContext"
 import { useRouter } from "next/navigation"
-import React from "react"
 import { HomeIcon, SkipBackIcon } from "lucide-react"
 
 export default function GameEnd() {
@@ -14,7 +13,7 @@ export default function GameEnd() {
     router.back()
   }
   return (
-    <React.Fragment>
+    <>
       <h1 className="text-4xl text-green-700">Game End</h1>
       <p className="text-xl">
         <span className="font-bold">User choice:</span>
@@ -47,6 +46,6 @@ export default function GameEnd() {
           </Link>
         </Button>
       </p>
-    </React.Fragment>
+    </>
   )
 }

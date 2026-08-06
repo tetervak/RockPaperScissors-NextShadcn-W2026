@@ -6,7 +6,6 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Choice } from "@/domain/game"
 import { useRouter } from "next/navigation"
 import { useGame } from "@/context/GameContext"
-import React from "react"
 import { HomeIcon, PlayIcon } from "lucide-react"
 
 export default function GameStart() {
@@ -26,7 +25,7 @@ export default function GameStart() {
   }
 
   return (
-    <React.Fragment>
+    <>
       <h1 className="text-4xl text-green-700">Game Start</h1>
       <RadioGroup
         value={gameData.userChoice}
@@ -64,6 +63,6 @@ export default function GameStart() {
           </Link>
         </Button>
       </p>
-    </React.Fragment>
+    </>
   )
 }

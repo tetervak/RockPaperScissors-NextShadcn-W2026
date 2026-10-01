@@ -17,9 +17,13 @@ const defaultGameData: GameData = {
     gameResult: GameResult.REPLAY
 }
 
-const GameContext = createContext<GameContextType | undefined>(undefined);
+const GameContext = createContext<GameContextType | null>(null);
 
-export function GameProvider({ children }: { children: ReactNode }) {
+interface GameProviderProps {
+    children: ReactNode;
+}
+
+export function GameProvider({ children }: GameProviderProps) {
     const [gameData, setGameData] = useState<GameData>(defaultGameData);
 
     const updateUserChoice = (choice: Choice) => {
@@ -48,7 +52,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
     }
 
     return(
-        <GameContext.Provider value={{
+        <GameContext value={{
             gameData,
             updateUserChoice,
             updateComputerChoice,
@@ -56,13 +60,13 @@ export function GameProvider({ children }: { children: ReactNode }) {
             resetGame
         }}>
             {children}
-        </GameContext.Provider>
+        </GameContext>
     )
 }
 
 export function useGame(): GameContextType {
     const context = useContext(GameContext);
-    if (context === undefined) {
+    if (context === null) {
         throw new Error('useGame must be used within a GameProvider');
     }
     return context;
